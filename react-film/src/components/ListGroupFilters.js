@@ -27,7 +27,7 @@ function ListGroupFilters(props) {
                 .map(f => <FilmRow film = { f }
                                    key = { f.id }
                                    setFilmToEdit = { props.setFilmToEdit }
-                                   deleteFilm={props.deleteFilm}
+                                   deleteFilm={ props.deleteFilm }
                                    setShowForm = { props.setShowForm }/>);
         case "Seen since Last Month" :
             return props.films.filter(f => dayjs(f.watchDate).isAfter(dayjs().subtract(1, 'month'))&& f.watchDate!==undefined)

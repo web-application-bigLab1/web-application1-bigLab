@@ -8,8 +8,6 @@ import { useState } from "react";
 function AppRoute(props) {
 
     const [filmList, setFilmList] = useState(library.getFilms());
-    // const [filter, setFilter] = useState(props.filter);
-    // const filters = FilmFiltersTitle(setFilter);
 
     return (
         <>

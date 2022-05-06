@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c85345d-9b1d-482d-bf3d-c7403d5182fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/react-film/src/components/AddButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-film/src/components/FilmRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-film/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-film/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-film/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/web-application1-bigLab.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/react-film/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/components/FilmFiltersTitle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/components/FilmRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/components/FilmRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-film/src/components/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/components/Films.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-film/src/components/ListGroupFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/components/ListGroupFilters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-film/src/widgets/SideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/widgets/SideBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +38,21 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MTConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1651860404525</updated>
       <workItem from="1651860408881" duration="1063000" />
-      <workItem from="1651861481753" duration="8990000" />
+      <workItem from="1651861481753" duration="9113000" />
+      <workItem from="1651870611761" duration="935000" />
     </task>
     <servers />
   </component>

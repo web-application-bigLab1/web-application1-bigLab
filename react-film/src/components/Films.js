@@ -10,7 +10,6 @@ function Films(props) {
 
     const [showForm, setShowForm] = useState(false);
     const [filmToEdit, setFilmToEdit] = useState();
-    // const [filter, setFilter] = useState({ filterName });
 
     const addFilm = (film) => {
         props.setFilmList((oldFilm) => [...oldFilm, film]);
