@@ -4,24 +4,21 @@ import {MainPage,DefaultRouter,EditRouter,FavoutiteRouter,BestRatedRouter,SeenLa
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import { library } from './components/FilmsLibrary';
 import {useState} from "react";
-import {movieFilters} from "./components/FilmFilters";
-import { NavBar} from "./widgets/NavBar";
-import {SideBar} from "./widgets/SideBar";
-import { Films } from './components/Films';
+import { FilmFiltersTitle } from "./components/FilmFiltersTitle";
+
 
 function App(prop){
   const [filmList, setFilmList] = useState(library.getFilms());
   const [filter, setFilter] = useState("All");
-  const filters = movieFilters(library, setFilmList, setFilter); 
-
-  let data=[[filmList, setFilmList],filter,filters];
+  const filters = FilmFiltersTitle(setFilter);
+  let data=[[filmList, setFilmList],[filter, setFilter],filters];
   const edit = (data)=>{EditRouter(data);}
 return(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<MainPage/>}/>
     <Route path='*' element={<DefaultRouter/>}/>
-    <Route path='edit' element={<EditRouter edit='edit'/>}/>
+    <Route path='edit' element={<EditRouter edit='data'/>}/>
     <Route path='/favourite' element={<FavoutiteRouter favourite='data'/>}/>
     <Route path='/bestRated' element={<BestRatedRouter bestRated='data'/>}/>
     <Route path='/seenLastMonth' element={<SeenLastMonthRouter seenLastMonth='data'/>}/>
@@ -31,3 +28,4 @@ return(
 );
 }
 export default App;
+
