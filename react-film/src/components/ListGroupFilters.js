@@ -39,7 +39,7 @@ function ListGroupFilters(props) {
                                    setFilmToEdit = { props.setFilmToEdit }
                                    setShowForm = { props.setShowForm }/>);
         case "Unseen" :
-            return props.films.filter(f => f.watchDate === undefined)
+            return props.films.filter(f => (f.watchDate === undefined||(!dayjs(f.watchDate).isValid())))
                 .map(f => <FilmRow film = { f }
                                    key = { f.id }
                                    deleteFilm={props.deleteFilm}
@@ -69,7 +69,7 @@ function FilmRow(props) {
             </div>
             <div className="col-2 justify-content-between">
                 {
-                    props.film.watchDate === undefined ? "NEVER" : dayjs(props.film.watchDate).format('YYYY-MM-DD')
+                   ( (props.film.watchDate === undefined)||(!dayjs(props.film.watchDate).isValid()))? "NEVER" : dayjs(props.film.watchDate).format('YYYY-MM-DD')
                 }
             </div>
             <div className="col-2 justify-content-between">

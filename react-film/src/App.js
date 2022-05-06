@@ -19,12 +19,12 @@ function App() {
       <header>
         <NavBar></NavBar>
       </header>
-      <div className = "container-fluid">
-        <div className = "row vheight-100">
+      <div class="container-fluid">
+        <div class="row vheight-100">
           <SideBar filters={filters} />
-          <main className = "col-md-9 col-12 below-nav">
-            <h1 className = "mb-2" id="filter-title">{filter}</h1>
-            <ul className = "list-group list-group-flush">
+          <main className="col-md-9 col-12 below-nav">
+            <h1 className="mb-2" id="filter-title">{filter}</h1>
+            <ul className="list-group list-group-flush">
               <Films films={filmList} setFilmList={setFilmList} filter={filter}></Films>
             </ul>
           </main>

@@ -9,12 +9,27 @@ function Films(props) {
     const [showForm, setShowForm] = useState(false);
     const [filmToEdit, setFilmToEdit] = useState();
 
-    const addFilm = (movie) => {
-        props.setFilmList(library.addNewFilmByRow(movie.id, movie.title, movie.isFavorite, movie.dateWatched, movie.rating));
+    const addFilm = (film) => {
+        props.setFilmList((oldFilm) => [...oldFilm, film]);
     }
 
-    const modifyFilm = (id, nF) => {
-        props.setFilmList(library.updateFilm(id, nF.title, nF.isFavorite, nF.dateWatched, nF.rating));
+    const modifyFilm = (film) => {
+        props.setFilmList((oldFilm) => {
+            return oldFilm.map(f => {
+                if (f.id === film.id) {
+                    f.id=film.id;
+                    f.title=film.title;
+                    f.isFavorite=film.isFavorite;
+                    f.watchDate=film.watchDate;
+                    f.rating=film.rating;
+                    f.star=film.star;
+                    return f;
+                }
+                else
+                    return f;
+            });
+        });
+        
     }
 
     const deleteFilm = (title) => {
@@ -37,7 +52,7 @@ function Films(props) {
                 setFilmToEdit={setFilmToEdit}
                 setShowForm={setShowForm}
                 cancel={() => setShowForm(false)} /> :
-                <Button variant='success'
+                <Button variant='primary'
                     className="btn btn-lg btn-primary"
                     onClick={() => {
                         setFilmToEdit();
