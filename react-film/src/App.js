@@ -1,37 +1,31 @@
 import './App.css';
-import { library } from './components/FilmsLibrary';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Films } from './components/Films';
-import { NavBar } from "./widgets/NavBar";
-import { SideBar } from "./widgets/SideBar";
-import { useState } from "react";
+import {MainPage,DefaultRouter,EditRouter,FavoutiteRouter,BestRatedRouter,SeenLastMonthRouter,UnSeenRouter} from './components/Page';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { library } from './components/FilmsLibrary';
+import {useState} from "react";
 import { FilmFiltersTitle } from "./components/FilmFiltersTitle";
 
 
-function App() {
-
+function App(prop){
   const [filmList, setFilmList] = useState(library.getFilms());
   const [filter, setFilter] = useState("All");
   const filters = FilmFiltersTitle(setFilter);
-
-  return (
-    <>
-      <header>
-        <NavBar></NavBar>
-      </header>
-      <div className = "container-fluid">
-        <div className = "row vheight-100">
-          <SideBar filters={filters} />
-          <main className = "col-md-9 col-12 below-nav">
-            <h1 className = "mb-2" id="filter-title">{filter}</h1>
-            <ul className = "list-group list-group-flush">
-              <Films films={filmList} setFilmList={setFilmList} filter={filter}></Films>
-            </ul>
-          </main>
-        </div>
-      </div>
-    </>
-  );
+  let data=[[filmList, setFilmList],[filter, setFilter],filters];
+  const edit = (data)=>{EditRouter(data);}
+return(
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<MainPage/>}/>
+    <Route path='*' element={<DefaultRouter/>}/>
+    <Route path='edit' element={<EditRouter edit='data'/>}/>
+    <Route path='/favourite' element={<FavoutiteRouter favourite='data'/>}/>
+    <Route path='/bestRated' element={<BestRatedRouter bestRated='data'/>}/>
+    <Route path='/seenLastMonth' element={<SeenLastMonthRouter seenLastMonth='data'/>}/>
+    <Route path='/unSeen' element={<UnSeenRouter unSeen='data'/>}/>
+  </Routes>
+  </BrowserRouter>
+);
 }
-
 export default App;
+
