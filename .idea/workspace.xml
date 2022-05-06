@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5c85345d-9b1d-482d-bf3d-c7403d5182fc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/react-film/src/components/AddButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-film/src/components/FilmRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/components/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/components/Films.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/components/ListGroupFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/components/ListGroupFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-film/src/widgets/SideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-film/src/widgets/SideBar.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28nloQ0hmbow347Ou9nmf1aWp5v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c85345d-9b1d-482d-bf3d-c7403d5182fc" name="Changes" comment="" />
+      <created>1651860404525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651860404525</updated>
+      <workItem from="1651860408881" duration="1063000" />
+      <workItem from="1651861481753" duration="8990000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

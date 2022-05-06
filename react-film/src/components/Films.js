@@ -3,11 +3,14 @@ import { Button } from "react-bootstrap";
 import { FilmForm } from "./FilmForm";
 import { useState } from 'react';
 import { library } from "./FilmsLibrary";
+import {AddButton} from "./AddButton";
+import {useParams} from "react-router-dom";
 
 function Films(props) {
 
     const [showForm, setShowForm] = useState(false);
     const [filmToEdit, setFilmToEdit] = useState();
+    // const [filter, setFilter] = useState({ filterName });
 
     const addFilm = (film) => {
         props.setFilmList((oldFilm) => [...oldFilm, film]);
@@ -36,31 +39,44 @@ function Films(props) {
         props.setFilmList((fm) => fm.filter(f => f.title !== title));
     }
 
-    return (
+    return (<>
         <ul className="list-group list-group-flush" id="list-films">
             <ListGroupFilters
-                films={props.films}
-                filter={props.filter}
-                deleteFilm={deleteFilm}
-                setFilmToEdit={setFilmToEdit}
-                setShowForm={setShowForm}
+                films = { props.films }
+                filter = { props.filter }
+                deleteFilm = { deleteFilm }
+                setFilmToEdit = { setFilmToEdit }
+                setShowForm = { setShowForm }
             />
-            {showForm ? <FilmForm newId={props.films.length}
-                addFilm={addFilm}
-                modifyFilm={modifyFilm}
-                filmToEdit={filmToEdit}
-                setFilmToEdit={setFilmToEdit}
-                setShowForm={setShowForm}
-                cancel={() => setShowForm(false)} /> :
-                <Button variant='primary'
-                    className="btn btn-lg btn-primary"
-                    onClick={() => {
-                        setFilmToEdit();
-                        setShowForm(true);
-                    }
-                    }>&#43;</Button>
-            }
-        </ul>);
+        </ul>
+            {/*{ showForm ?*/}
+            {/*    <FilmForm*/}
+            {/*        newId={props.films.length}*/}
+            {/*        addFilm={addFilm}*/}
+            {/*        modifyFilm={modifyFilm}*/}
+            {/*        filmToEdit={filmToEdit}*/}
+            {/*        setFilmToEdit={setFilmToEdit}*/}
+            {/*        setShowForm={setShowForm}*/}
+            {/*        cancel={() => setShowForm(false)}*/}
+            {/*    /> :*/}
+            {/*    <Button*/}
+            {/*        variant='primary'*/}
+            {/*        className="btn btn-lg btn-primary"*/}
+            {/*        onClick={() => {*/}
+            {/*            setFilmToEdit(undefined);*/}
+            {/*            setShowForm(true);*/}
+            {/*        }*/}
+            {/*    }>&#43;</Button>*/}
+            {/*}*/}
+            {/*<AddButton newId = { props.films.length }*/}
+            {/*           addFilm = { addFilm }*/}
+            {/*           modifyFilm = { modifyFilm }*/}
+            {/*           filmToEdit = { filmToEdit }*/}
+            {/*           setFilmToEdit = { setFilmToEdit }*/}
+            {/*           setShowForm = { setShowForm }*/}
+            {/*/>*/}
+            </>
+    );
 }
 
-export { Films };
+export { Films }

@@ -11,8 +11,6 @@ function ListGroupFilters(props) {
                 deleteFilm={props.deleteFilm}
                 setShowForm = { props.setShowForm }
                 setFilmToEdit = { props.setFilmToEdit }
-                
-                
                 />
                 );
         case "Favorite" :
