@@ -38,7 +38,7 @@ function App() {
           films={filmList}
           deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/add" element={<FilmFormAddRoute newId={filmList.length}
+        <Route path="/add" element={<FilmFormAddRoute newId={filmFunctions.assignNewId()}
                                                       addFilm={filmFunctions.addFilm} />} />
 
         <Route path="/edit" element={<FilmFormEditRoute modifyFilm={filmFunctions.modifyFilm} />} />

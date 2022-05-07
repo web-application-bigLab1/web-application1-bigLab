@@ -46,6 +46,7 @@ function FilmList(props) {
 function FilmRow(props) {
     return (
         <li className="d-flex justify-content-between list-group-item">
+             <div className="col-3"> {props.film.id}</div>
             <div className="col-3">
                 {
                     props.film.isFavorite ?

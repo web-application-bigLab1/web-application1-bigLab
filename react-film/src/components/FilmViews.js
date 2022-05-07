@@ -27,7 +27,7 @@ function AppRoute(props) {
                             />
                         </ul>
                         <Link to="/add" state={{
-                            newId: props.newId
+                            filmToEdit:false
                         }}>
                             <button type="button"
                                 className="btn btn-lg btn-primary fixed-right-bottom">&#43;
