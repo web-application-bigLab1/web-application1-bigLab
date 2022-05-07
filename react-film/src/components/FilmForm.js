@@ -7,10 +7,10 @@ function FilmForm(props) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [title, setTitle] = useState(location.state.filmToEdit ? location.state.filmToEdit.title : '');
-  const [isFavorite, setIsFavorite] = useState(location.state.filmToEdit ? location.state.filmToEdit.isFavorite : false);
-  const [dateWatched, setDateWatched] = useState(location.state.filmToEdit ? dayjs(location.state.filmToEdit.watchDate).format('YYYY-MM-DD') : dayjs());
-  const [rating, setRating] = useState(location.state.filmToEdit ? location.state.filmToEdit.rating : 0);
+  const [title, setTitle] = useState(location.state ? location.state.filmToEdit.title : '');
+  const [isFavorite, setIsFavorite] = useState(location.state ? location.state.filmToEdit.isFavorite : false);
+  const [dateWatched, setDateWatched] = useState(location.state ? dayjs(location.state.filmToEdit.watchDate).format('YYYY-MM-DD') : dayjs());
+  const [rating, setRating] = useState(location.state ? location.state.filmToEdit.rating : 0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ function FilmForm(props) {
       const starNow = (i < rating) ? starFilled : starEmpty;
       staricon += starNow;
     }
-    if (!location.state.filmToEdit) {
+    if (!location.state) {
       const filmAdd = {
         //id: location.state.newId,
         id :props.newId,
@@ -50,7 +50,7 @@ function FilmForm(props) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {location.state.filmToEdit ? <h1 className="mb-2">Edit Film Here</h1> : <h1 className="mb-2">Add Film Here</h1>}
+      {location.state ? <h1 className="mb-2">Edit Film Here</h1> : <h1 className="mb-2">Add Film Here</h1>}
       <Form.Group className="mb-3">
         <Form.Label>Title</Form.Label>
         <Form.Control

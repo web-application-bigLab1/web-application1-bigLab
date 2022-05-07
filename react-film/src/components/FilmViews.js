@@ -26,9 +26,7 @@ function AppRoute(props) {
                                 deleteFilm={props.deleteFilm}
                             />
                         </ul>
-                        <Link to="/add" state={{
-                            filmToEdit:false
-                        }}>
+                        <Link to="/add">
                             <button type="button"
                                 className="btn btn-lg btn-primary fixed-right-bottom">&#43;
                             </button>
