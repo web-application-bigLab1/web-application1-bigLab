@@ -22,7 +22,6 @@ function AppRoute(props) {
                           films = { props.films }
                           filter = { props.filter }
                           deleteFilm = { props.deleteFilm }
-                          setFilmToEdit = { props.setFilmToEdit }
                       />
                   </ul>
                   <AddButton newId = { props.films.length }

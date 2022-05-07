@@ -1,4 +1,4 @@
-function FilmFunctions(library, filmList, setFilmList, filmToEdit, setFilmToEdit) {
+function FilmFunctions(filmList, setFilmList) {
 
     this.addFilm = (film) => {
         setFilmList((oldFilm) => [...oldFilm, film]);
@@ -29,8 +29,6 @@ function FilmFunctions(library, filmList, setFilmList, filmToEdit, setFilmToEdit
     return {
         filmList: { filmList },
         setFilmList: { setFilmList },
-        filmToEdit: { filmToEdit },
-        setFilmToEdit: { setFilmToEdit },
         addFilm: this.addFilm,
         modifyFilm: this.modifyFilm,
         deleteFilm: this.deleteFilm
