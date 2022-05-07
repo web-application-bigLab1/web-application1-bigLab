@@ -1,31 +1,51 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {MainPage,DefaultRouter,EditRouter,FavoutiteRouter,BestRatedRouter,SeenLastMonthRouter,UnSeenRouter} from './components/Page';
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
-import { library } from './components/FilmsLibrary';
-import {useState} from "react";
-import { FilmFiltersTitle } from "./components/FilmFiltersTitle";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AppRoute, FilmFormAddRoute, FilmFormEditRoute,FourOFour } from "./components/FilmViews";
+import { library } from "./components/FilmsLibrary";
+import { FilmFunctions } from "./components/FilmFunctions";
+import { useState } from "react";
 
 function App(prop){
   const [filmList, setFilmList] = useState(library.getFilms());
-  const [filter, setFilter] = useState("All");
-  const filters = FilmFiltersTitle(setFilter);
-  let data=[[filmList, setFilmList],[filter, setFilter],filters];
-  const edit = (data)=>{EditRouter(data);}
-return(
-  <BrowserRouter>
-  <Routes>
-    <Route path='/' element={<MainPage/>}/>
-    <Route path='*' element={<DefaultRouter/>}/>
-    <Route path='edit' element={<EditRouter edit='data'/>}/>
-    <Route path='/favourite' element={<FavoutiteRouter favourite='data'/>}/>
-    <Route path='/bestRated' element={<BestRatedRouter bestRated='data'/>}/>
-    <Route path='/seenLastMonth' element={<SeenLastMonthRouter seenLastMonth='data'/>}/>
-    <Route path='/unSeen' element={<UnSeenRouter unSeen='data'/>}/>
-  </Routes>
-  </BrowserRouter>
-);
+  let filmFunctions = new FilmFunctions(filmList, setFilmList);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppRoute filter="All"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/all" element={<AppRoute filter="All"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/favorite" element={<AppRoute filter="Favorite"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/best" element={<AppRoute filter="Best Rated"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/last" element={<AppRoute filter="Seen since Last Month"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/unseen" element={<AppRoute filter="Unseen"
+          films={filmList}
+          deleteFilm={filmFunctions.deleteFilm} />} />
+
+        <Route path="/add" element={<FilmFormAddRoute newId={filmFunctions.assignNewId()}
+                                                      addFilm={filmFunctions.addFilm} />} />
+
+        <Route path="/edit" element={<FilmFormEditRoute modifyFilm={filmFunctions.modifyFilm} />} />
+
+        <Route path="*" element={<FourOFour />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
 }
 export default App;
 

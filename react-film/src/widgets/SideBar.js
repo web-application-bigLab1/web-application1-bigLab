@@ -1,40 +1,31 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
 
 function SideBar(props) {
     return (
-        <aside class="collapse d-md-block col-md-3 col-12 bg-light below-nav" id="left-sidebar">
-            <div class="list-group list-group-flush">
-                <a
-                    href="#"
+        <aside className = "collapse d-md-block col-md-3 col-12 bg-light below-nav" id="left-sidebar">
+            <div className = "list-group list-group-flush">
+                <Link to = "/all"
                     id="filter-all"
-                    class="list-group-item list-group-item-action active"
-                    onClick={props.filters[0]}
-                >All</a>
-                <a
-                    href="#"
+                    className = "list-group-item list-group-item-action active"
+                >All</Link>
+                <Link to = "/favorite"
                     id="filter-favorites"
-                    class="list-group-item list-group-item-action"
-                    onClick={props.filters[1]}
-                >Favorites</a>
-                <a
-                    href="#"
+                    className = "list-group-item list-group-item-action"
+                >Favorites</Link>
+                <Link to = "/best"
                     id="filter-best"
-                    class="list-group-item list-group-item-action"
-                    onClick = { props.filters[2] }
-                >Best Rated</a>
-                <a
-                    href="#"
+                    className = "list-group-item list-group-item-action"
+                >Best Rated</Link>
+                <Link to = "/last"
                     id="filter-seen-last-month"
-                    class="list-group-item list-group-item-action"
-                    onClick = { props.filters[3] }
+                    className = "list-group-item list-group-item-action"
                 >Seen Last
-                    Month</a>
-                <a
-                    href="#"
+                    Month</Link>
+                <Link to = "/unseen"
                     id="filter-unseen"
-                    class="list-group-item list-group-item-action"
-                    onClick = { props.filters[4] }
-                >Unseen</a>
+                    className = "list-group-item list-group-item-action"
+                >Unseen</Link>
             </div>
         </aside>
     );
