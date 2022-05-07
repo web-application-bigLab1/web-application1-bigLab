@@ -5,9 +5,7 @@ import { library } from "./components/FilmsLibrary";
 import { FilmFunctions } from "./components/FilmFunctions";
 import { useState } from "react";
 
-
-function App() {
-
+function App(prop){
   const [filmList, setFilmList] = useState(library.getFilms());
   let filmFunctions = new FilmFunctions(filmList, setFilmList);
 
@@ -49,5 +47,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
+
