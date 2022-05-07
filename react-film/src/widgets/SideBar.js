@@ -9,7 +9,7 @@ function SideBar(props) {
                     id="filter-all"
                     className = "list-group-item list-group-item-action active"
                 >All</Link>
-                <Link to = "/fav"
+                <Link to = "/favorite"
                     id="filter-favorites"
                     className = "list-group-item list-group-item-action"
                 >Favorites</Link>

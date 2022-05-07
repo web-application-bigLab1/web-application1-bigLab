@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AppRoute, FilmFormAddRoute, FilmFormEditRoute } from "./components/FilmViews";
+import { AppRoute, FilmFormAddRoute, FilmFormEditRoute,FourOFour } from "./components/FilmViews";
 import { library } from "./components/FilmsLibrary";
 import { FilmFunctions } from "./components/FilmFunctions";
 import { useState } from "react";
-import { FourOFour } from "./components/404";
+
 
 function App() {
 
@@ -22,9 +22,10 @@ function App() {
           films={filmList}
           deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/fav" element={<AppRoute filter="Favorite"
+        <Route path="/favorite" element={<AppRoute filter="Favorite"
           films={filmList}
           deleteFilm={filmFunctions.deleteFilm} />} />
+
         <Route path="/best" element={<AppRoute filter="Best Rated"
           films={filmList}
           deleteFilm={filmFunctions.deleteFilm} />} />
