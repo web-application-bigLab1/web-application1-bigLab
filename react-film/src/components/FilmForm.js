@@ -65,7 +65,7 @@ function FilmForm(props) {
       <Form.Group className="mb-3">
         <Form.Check
           type="checkbox"
-          label={"Favorite?"}
+          label={"Favorite"}
           checked={isFavorite}
           onChange={() => setIsFavorite(!isFavorite)} />
       </Form.Group>

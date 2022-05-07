@@ -73,15 +73,17 @@ function FilmRow(props) {
 }
 function FilmActions(props) {
     return <>
-        <Button variant='danger' onClick={() => {
-            props.deleteFilm(props.film.title)
-        }}><i className='bi bi-trash3'></i></Button>
-        &nbsp;
-        <Link to="/edit" state={{filmToEdit: props.film}}>
+
+        <Link to="/edit" state={{ filmToEdit: props.film }}>
             <Button variant="primary">
                 <i className='bi bi-pencil-square'></i>
             </Button>
         </Link>
+        &nbsp;
+        <Button variant='danger' onClick={() => {
+            props.deleteFilm(props.film.title)
+        }}><i className='bi bi-trash3'></i></Button>
+
     </>
 }
 
