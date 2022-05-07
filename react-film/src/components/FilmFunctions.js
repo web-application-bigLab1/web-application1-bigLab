@@ -1,7 +1,3 @@
-import { useState } from "react";
-import {library} from "./FilmsLibrary";
-
-
 function FilmFunctions(library, filmList, setFilmList, filmToEdit, setFilmToEdit) {
 
     this.addFilm = (film) => {

@@ -56,26 +56,29 @@ function ListGroupFilters(props) {
 function FilmRow(props) {
     return (
         <li className="d-flex justify-content-between list-group-item">
-            <div className="col-3 justify-content-between">
+            <div className="col-3">
                 {
                     props.film.isFavorite ?
-                    <p className="favorite text-start col-md-5 col-3">{props.film.title}</p> :
-                    <p className="text-start col-md-5 col-3">{props.film.title}</p>
+                    <p className="favorite text-start">{props.film.title}</p> :
+                    <p className="text-start">{props.film.title}</p>
                 }
             </div>
-            <div className="col-2 justify-content-between">
+            <div className="col-2">
                 <Form.Check type="checkbox" label="Favorite" checked = { props.film.isFavorite }/>
             </div>
-            <div className="col-2 justify-content-between">
+            <div className="col-2">
                 {
                    ( (props.film.watchDate === undefined)||(!dayjs(props.film.watchDate).isValid()))? "NEVER" : dayjs(props.film.watchDate).format('YYYY-MM-DD')
                 }
             </div>
-            <div className="col-2 justify-content-between">
+            <div className="col-2">
                 <div dangerouslySetInnerHTML={{__html: props.film.star}} />
             </div>
-            <div className="col-2 justify-content-end">
-             <FilmActions deleteFilm={props.deleteFilm}  setShowForm={props.setShowForm} setFilmToEdit={props.setFilmToEdit} film={props.film} />
+            <div className="d-flex col-2 justify-content-end">
+             <FilmActions deleteFilm={props.deleteFilm}
+                          setShowForm={props.setShowForm}
+                          setFilmToEdit={props.setFilmToEdit}
+                          film={props.film} />
             </div>
         </li>
     );

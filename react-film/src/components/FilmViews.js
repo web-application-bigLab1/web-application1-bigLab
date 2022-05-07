@@ -1,8 +1,9 @@
 import '../App.css';
-import { Films } from './Films';
 import { NavBar } from "../widgets/NavBar";
 import { SideBar } from "../widgets/SideBar";
 import { FilmForm } from "./FilmForm";
+import { ListGroupFilters } from "./ListGroupFilters";
+import { AddButton } from "./AddButton";
 
 function AppRoute(props) {
 
@@ -15,14 +16,18 @@ function AppRoute(props) {
             <div className = "row height-100">
               <SideBar/>
               <main className  = "col-md-9 col-12 below-nav">
-                <h1 className  = "mb-2" id="filter-title">{ props.filter }</h1>
-                <ul className  = "list-group list-group-flush">
-                  <Films films = { props.films }
-                         setFilmList = { props.setFilmList }
-                         filter = { props.filter }
-                         deleteFilm = { props.deleteFilm }
-                         setFilmToEdit = { props.setFilmToEdit }/>
-                </ul>
+                  <h1 className  = "ms-3" id = "filter-title">{ props.filter }</h1>
+                  <ul className = "list-group list-group-flush" id = "list-films">
+                      <ListGroupFilters
+                          films = { props.films }
+                          filter = { props.filter }
+                          deleteFilm = { props.deleteFilm }
+                          setFilmToEdit = { props.setFilmToEdit }
+                      />
+                  </ul>
+                  <AddButton newId = { props.films.length }
+                             addFilm = { props.addFilm }
+                  />
               </main>
             </div>
           </div>
