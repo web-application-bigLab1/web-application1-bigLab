@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { Button, Form } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from "react-router-dom";
 
 function ListGroupFilters(props) {
     switch(props.filter) {
@@ -80,8 +81,19 @@ function FilmRow(props) {
     );
 }
 function FilmActions(props) {
-    return <><Button variant='danger' onClick={() => {props.deleteFilm(props.film.title)}}><i className='bi bi-trash3'></i></Button>&nbsp;
-           <Button variant = "primary" onClick = {() => {props.setShowForm(true); props.setFilmToEdit(props.film);}}><i className='bi bi-pencil-square'></i></Button></>
+    return <>
+        <Button variant='danger' onClick={() => {
+            props.deleteFilm(props.film.title)
+        }}><i className='bi bi-trash3'></i></Button>
+       &nbsp;
+        <Link to = "/edit" state = {{
+            filmToEdit : props.film
+        }}>
+           <Button variant = "primary">
+               <i className='bi bi-pencil-square'></i>
+           </Button>
+        </Link>
+    </>
   }
 
 export { ListGroupFilters }
