@@ -26,22 +26,14 @@ function FilmFunctions(filmList, setFilmList) {
         setFilmList((fm) => fm.filter(f => f.title !== title));
     }
    
+   
     this.assignNewId = () => {
-        let newId;
-        let flag=0;
-        this.idList=[];
-        for(let i=0;i<filmList.length;i++){
-            this.idList.push(filmList[i].id);
-        }
-        for(let j=0;flag===0;j++){
-            if(!(this.idList.includes(j))){
-             newId= j;
-             flag=1;
-            }
-        }
-
-        return newId;
+        let i = 0;
+        while (filmList.map(f => f.id).includes(i)) i++;
+        return i;
     }
+
+
 
    
 
