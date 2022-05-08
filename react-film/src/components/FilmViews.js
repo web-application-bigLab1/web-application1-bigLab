@@ -1,6 +1,6 @@
 import '../App.css';
-import { NavBar } from "./NavBar";
-import { SideBar } from "./SideBar";
+import { NavBar } from "../widgets/NavBar";
+import { SideBar } from "../widgets/SideBar";
 import { FilmForm } from "./FilmForm";
 import { FilmList } from "./FilmList";
 import {Link} from "react-router-dom";
@@ -23,11 +23,14 @@ function AppRoute(props) {
                             <FilmList
                                 films={props.films}
                                 filter={props.filter}
-                                modifyFilm = { props.modifyFilm }
                                 deleteFilm={props.deleteFilm}
+                                favoriteChange={props.favoriteChange}
+                                ratingChange={props.ratingChange}
                             />
                         </ul>
-                        <Link to="/add">
+                        <Link to="/add" state={{
+                            filmToEdit:false
+                        }}>
                             <button type="button"
                                 className="btn btn-lg btn-primary fixed-right-bottom">&#43;
                             </button>
@@ -47,7 +50,10 @@ function FilmFormAddRoute(props) {
             </header>
             <div className="container-fluid d-flex justify-content-center">
                 <div id="ff-np" className="height-100">
-                    <FilmForm addFilm={props.addFilm}/>
+                    <FilmForm
+                        newId={props.newId}
+                        addFilm={props.addFilm}
+                    />
                 </div>
             </div>
         </>
