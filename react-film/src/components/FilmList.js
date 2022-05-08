@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import { Button, Form } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Link } from "react-router-dom";
+import {StarForm} from "./StarForm";
 
 function FilmList(props) {
     switch (props.filter) {
@@ -9,37 +10,41 @@ function FilmList(props) {
             return props.films.map(f => <FilmRow
                 film={f}
                 key={f.id}
-                deleteFilm={props.deleteFilm}
-            />
-            );
+                modifyFilm = { props.modifyFilm }
+                deleteFilm={ props.deleteFilm }
+            />);
         case "Favorite":
             return props.films.filter(f => f.isFavorite)
                 .map(f => <FilmRow
                     film={f}
                     key={f.id}
-                    deleteFilm={props.deleteFilm}
+                    modifyFilm = { props.modifyFilm }
+                    deleteFilm={ props.deleteFilm }
                 />);
         case "Best Rated":
             return props.films.filter(f => f.rating === 5)
                 .map(f => <FilmRow film={f}
-                    key={f.id}
-                    deleteFilm={props.deleteFilm}
+                                   key={f.id}
+                                   modifyFilm = { props.modifyFilm }
+                                   deleteFilm={ props.deleteFilm }
                 />);
         case "Seen since Last Month":
             return props.films.filter(f => dayjs(f.watchDate).isAfter(dayjs().subtract(1, 'month')) && f.watchDate !== undefined)
                 .map(f => <FilmRow film={f}
-                    key={f.id}
-                    deleteFilm={props.deleteFilm} />);
+                                   key={f.id}
+                                   modifyFilm = { props.modifyFilm }
+                                   deleteFilm={ props.deleteFilm } />);
         case "Unseen":
             return props.films.filter(f => (f.watchDate === undefined || (!dayjs(f.watchDate).isValid())))
                 .map(f => <FilmRow film={f}
-                    key={f.id}
-                    deleteFilm={props.deleteFilm} />);
+                                   key={f.id}
+                                   modifyFilm = { props.modifyFilm }
+                                   deleteFilm={ props.deleteFilm } />);
         default:
             return props.films.map(f => <FilmRow film={f}
-                key={f.id}
-                deleteFilm={props.deleteFilm}
-            />);
+                                                 key={f.id}
+                                                 modifyFilm = { props.modifyFilm }
+                                                 deleteFilm={ props.deleteFilm } />);
     }
 }
 
@@ -54,7 +59,16 @@ function FilmRow(props) {
                 }
             </div>
             <div className="col-2">
-                <Form.Check type="checkbox" label="Favorite" checked={props.film.isFavorite} onChange={() => {}}/>
+                <Form.Check type="checkbox" label="Favorite" checked={props.film.isFavorite} onChange={() => {
+                    const nFilm = {
+                        id: props.film.id,
+                        title: props.film.title,
+                        isFavorite: !props.film.isFavorite,
+                        watchDate: props.film.watchDate,
+                        rating: props.film.rating
+                    }
+                    props.modifyFilm(nFilm);
+                }}/>
             </div>
             <div className="col-2">
                 {
@@ -62,7 +76,20 @@ function FilmRow(props) {
                 }
             </div>
             <div className="col-2">
-                <div dangerouslySetInnerHTML={{ __html: props.film.star }} />
+                {/*<div dangerouslySetInnerHTML={{ __html: props.film.star }} />*/}
+                <StarForm
+                    setRating= {(rating) => {
+                    const nFilm = {
+                        id: props.film.id,
+                        title: props.film.title,
+                        isFavorite: props.film.isFavorite,
+                        watchDate: props.film.watchDate,
+                        rating: rating
+                    }
+                    props.modifyFilm(nFilm);
+                }}
+                    rating={ props.film.rating }
+                />
             </div>
             <div className="d-flex col-2 justify-content-end">
                 <FilmActions deleteFilm={props.deleteFilm}

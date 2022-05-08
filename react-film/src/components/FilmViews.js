@@ -23,6 +23,7 @@ function AppRoute(props) {
                             <FilmList
                                 films={props.films}
                                 filter={props.filter}
+                                modifyFilm = { props.modifyFilm }
                                 deleteFilm={props.deleteFilm}
                             />
                         </ul>
@@ -46,10 +47,7 @@ function FilmFormAddRoute(props) {
             </header>
             <div className="container-fluid d-flex justify-content-center">
                 <div id="ff-np" className="height-100">
-                    <FilmForm
-                        newId={props.newId}
-                        addFilm={props.addFilm}
-                    />
+                    <FilmForm addFilm={props.addFilm}/>
                 </div>
             </div>
         </>

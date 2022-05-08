@@ -11,37 +11,45 @@ function App(){
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AppRoute filter="All"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/" element={
+          <AppRoute filter="All"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/all" element={<AppRoute filter="All"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/all" element={
+          <AppRoute filter="All"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/favorite" element={<AppRoute filter="Favorite"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/favorite" element={
+          <AppRoute filter="Favorite"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/best" element={<AppRoute filter="Best Rated"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/best" element={
+          <AppRoute filter="Best Rated"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/last" element={<AppRoute filter="Seen since Last Month"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/last" element={
+          <AppRoute filter="Seen since Last Month"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/unseen" element={<AppRoute filter="Unseen"
-          films={filmList}
-          deleteFilm={filmFunctions.deleteFilm} />} />
+        <Route path="/unseen" element={
+          <AppRoute filter="Unseen"
+                    films={filmList}
+                    modifyFilm = { filmFunctions.modifyFilm }
+                    deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/add" element={<FilmFormAddRoute newId={filmFunctions.assignNewId}
-                                                      addFilm={filmFunctions.addFilm} />} />
-
+        <Route path="/add" element={<FilmFormAddRoute addFilm={filmFunctions.addFilm} />} />
         <Route path="/edit" element={<FilmFormEditRoute modifyFilm={filmFunctions.modifyFilm} />} />
-
         <Route path="*" element={<FourOFour />} />
-
       </Routes>
     </BrowserRouter>
   );
