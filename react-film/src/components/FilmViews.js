@@ -1,6 +1,6 @@
 import '../App.css';
-import { NavBar } from "../widgets/NavBar";
-import { SideBar } from "../widgets/SideBar";
+import { NavBar } from "./NavBar";
+import { SideBar } from "./SideBar";
 import { FilmForm } from "./FilmForm";
 import { FilmList } from "./FilmList";
 import {Link} from "react-router-dom";
@@ -26,9 +26,7 @@ function AppRoute(props) {
                                 deleteFilm={props.deleteFilm}
                             />
                         </ul>
-                        <Link to="/add" state={{
-                            filmToEdit:false
-                        }}>
+                        <Link to="/add">
                             <button type="button"
                                 className="btn btn-lg btn-primary fixed-right-bottom">&#43;
                             </button>

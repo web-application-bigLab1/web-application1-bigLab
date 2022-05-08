@@ -54,7 +54,7 @@ function FilmRow(props) {
                 }
             </div>
             <div className="col-2">
-                <Form.Check type="checkbox" label="Favorite" checked={props.film.isFavorite} />
+                <Form.Check type="checkbox" label="Favorite" checked={props.film.isFavorite} onChange={() => {}}/>
             </div>
             <div className="col-2">
                 {

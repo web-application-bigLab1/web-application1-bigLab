@@ -7,10 +7,10 @@ function FilmForm(props) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [title, setTitle] = useState(location.state.filmToEdit ? location.state.filmToEdit.title : '');
-  const [isFavorite, setIsFavorite] = useState(location.state.filmToEdit ? location.state.filmToEdit.isFavorite : false);
-  const [dateWatched, setDateWatched] = useState(location.state.filmToEdit ? dayjs(location.state.filmToEdit.watchDate).format('YYYY-MM-DD') : dayjs());
-  const [rating, setRating] = useState(location.state.filmToEdit ? location.state.filmToEdit.rating : 0);
+  const [title, setTitle] = useState(location.state ? location.state.filmToEdit.title : '');
+  const [isFavorite, setIsFavorite] = useState(location.state ? location.state.filmToEdit.isFavorite : false);
+  const [dateWatched, setDateWatched] = useState(location.state ? dayjs(location.state.filmToEdit.watchDate).format('YYYY-MM-DD') : dayjs());
+  const [rating, setRating] = useState(location.state ? location.state.filmToEdit.rating : 0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,9 +22,8 @@ function FilmForm(props) {
       const starNow = (i < rating) ? starFilled : starEmpty;
       staricon += starNow;
     }
-    if (!location.state.filmToEdit) {
+    if (!location.state) {
       const filmAdd = {
-        //id: location.state.newId,
         id :props.newId,
         title: title,
         isFavorite: isFavorite,
@@ -50,7 +49,7 @@ function FilmForm(props) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {location.state.filmToEdit ? <h1 className="mb-2">Edit Film Here</h1> : <h1 className="mb-2">Add Film Here</h1>}
+      {location.state ? <h1 className="mb-2">Edit Film Here</h1> : <h1 className="mb-2">Add Film Here</h1>}
       <Form.Group className="mb-3">
         <Form.Label>Title</Form.Label>
         <Form.Control
@@ -100,7 +99,7 @@ function FilmForm(props) {
 }
 function Star(props) {
   return (props.num <= props.rating ?
-    <a onClick={() => {
+    <Link to = "#" onClick={() => {
       props.setRating(props.num);
     }}>
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +110,8 @@ function Star(props) {
         <path
           d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
       </svg>
-    </a> :
-    <a onClick={() => {
+    </Link> :
+    <Link to = "#" onClick={() => {
       props.setRating(props.num);
     }}>
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +123,7 @@ function Star(props) {
         <path
           d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
       </svg>
-    </a>
+    </Link>
   );
 }
 
