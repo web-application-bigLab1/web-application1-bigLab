@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 
-function SideBar(props) {
+function SideBar() {
     return (
         <aside className = "collapse d-md-block col-md-3 col-12 bg-light below-nav" id="left-sidebar">
             <div className = "list-group list-group-flush">

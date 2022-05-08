@@ -5,10 +5,9 @@ import { library } from "./components/FilmsLibrary";
 import { FilmFunctions } from "./components/FilmFunctions";
 import { useState } from "react";
 
-function App(prop){
+function App(){
   const [filmList, setFilmList] = useState(library.getFilms());
   let filmFunctions = new FilmFunctions(filmList, setFilmList);
-/*from main*/
   return (
     <BrowserRouter>
       <Routes>
@@ -36,7 +35,7 @@ function App(prop){
           films={filmList}
           deleteFilm={filmFunctions.deleteFilm} />} />
 
-        <Route path="/add" element={<FilmFormAddRoute newId={filmFunctions.assignNewId()}
+        <Route path="/add" element={<FilmFormAddRoute newId={filmFunctions.assignNewId}
                                                       addFilm={filmFunctions.addFilm} />} />
 
         <Route path="/edit" element={<FilmFormEditRoute modifyFilm={filmFunctions.modifyFilm} />} />
