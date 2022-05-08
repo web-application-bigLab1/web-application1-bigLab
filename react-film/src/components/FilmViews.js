@@ -1,6 +1,6 @@
 import '../App.css';
-import { NavBar } from "../widgets/NavBar";
-import { SideBar } from "../widgets/SideBar";
+import { NavBar } from "./NavBar";
+import { SideBar } from "./SideBar";
 import { FilmForm } from "./FilmForm";
 import { FilmList } from "./FilmList";
 import {Link} from "react-router-dom";
